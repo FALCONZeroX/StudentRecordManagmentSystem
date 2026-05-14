@@ -32,17 +32,17 @@
 
 ## 🗂️ **PROJECT STRUCTURE (Header‑only)**
 Student-Management-System/
-├── main.cpp                # نقطة الانطلاق - تحميل البيانات الثنائية وتشغيل القائمة الرئيسية
-├── clsStudent.h            # كائن الطالب (تغليف البيانات، Getters/Setters، وتنسيق السجلات)
-├── clsStudentManager.h     # منطق العمل: إدارة الـ Vector، عمليات CRUD، البحث، والتعامل مع الملفات
-├── clsStudentUI.h          # شاشات واجهة المستخدم (إضافة، عرض، بحث، تحديث، حذف، إحصائيات)
-├── clsMainScreen.h         # المتحكم في القائمة الرئيسية وحلقة التنقل (Navigation Loop)
-├── clsInputValidate.h      # التحقق من المدخلات (الأرقام، الأسماء، البريد، المعدل، التواريخ)
-├── clsUI_Utility.h         # أدوات مساعدة (العناوين، الفواصل، الرسائل، التأكيد، الترقيم)
+├── main.cpp # Entry point – loads binary data & launches main menu
+├── clsStudent.h # Student entity (encapsulated data, getters/setters, row formatting)
+├── clsStudentManager.h # Business logic: vector management, CRUD, search, sort, file I/O
+├── clsStudentUI.h # User interface screens (add, show, search, update, delete, stats, etc.)
+├── clsMainScreen.h # Main menu controller & navigation loop
+├── clsInputValidate.h # Input validation (numbers, names, email, phone, GPA, dates, etc.)
+├── clsUI_Utility.h # Helper tools (headers, separators, messages, confirmation, pagination)
 ├── data/
-│   └── Students.data       # قاعدة البيانات الثنائية (Binary Data) - تخزين متسلسل للبيانات
-├── .gitignore              # ملف استثناء الملفات غير المرغوبة من التتبع (مثل ملفات VS)
-└── README.md               # وثيقة شرح المشروع
+│ └── Students.data # Auto‑generated binary database (vector serialization)
+├── .gitignore
+└── README.md              # وثيقة شرح المشروع
 
 
 ---
