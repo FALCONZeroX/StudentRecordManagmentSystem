@@ -81,3 +81,19 @@ Student-Management-System/
 [9]  Import from .txt / .csv
 [10] Backup & Restore (binary)
 [11] Exit
+```
+
+### 🔹 STUDENT DATA STRUCTURE (`clsStudent` – private members)
+
+| Field | Type | Validation Rules |
+| :--- | :--- | :--- |
+| `_RollNumber` | `int` | Auto-generated (unique, starts from 1000)[cite: 1] |
+| `_FirstName` | `char[40]` | No digits, spaces allowed[cite: 1] |
+| `_LastName` | `char[40]` | No digits, spaces allowed[cite: 1] |
+| `_Department` | `char[40]` | Strict: `IT`, `CS`, `ME`, `CE`[cite: 1] |
+| `_Semester` | `int` | **1 – 8**[cite: 1] |
+| `_cGPA` | `float` | **0.0 – 4.0** (2-digit precision)[cite: 1] |
+| `_DateOfBirth` | `char[12]` | `DD/MM/YYYY` (day 1-31, month 1-12, year 1980-2026)[cite: 1] |
+| `_PhoneNumber` | `char[20]` | Exactly 9 numeric digits[cite: 1] |
+| `_Email` | `char[40]` | Must contain `@` and `.`[cite: 1] |
+| `_IsActive` | `bool` | `true` (active) / `false` (inactive)[cite: 1] |
