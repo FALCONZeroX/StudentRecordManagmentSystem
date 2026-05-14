@@ -119,7 +119,26 @@ Student-Management-System/
 
 ---
 
-### 🛡️ Robustness Features
-* **Infinite Loop Prevention:** All numerical inputs are wrapped in `while` loops that monitor the `std::cin` state.
-* **Type Safety:** Prevents character input from breaking integer-based menu selections.
-* **Atomic Validation:** Data is only passed to the `clsStudent` object after passing all validation layers.
+## 🔹 PAGINATION SYSTEM
+
+To ensure readability in the console, the system implements a dynamic pagination mechanism for displaying student records.
+
+* **Capacity:** 10 records per page.
+* **Layout:** Dynamic column widths (Total width: **106 characters**).
+* **Visuals:** Colored rows based on status (e.g., Green for **Active**, Red for **InActive**) using ANSI console color codes.
+
+### 🕹️ Navigation Commands
+The user can navigate through the data using the following intuitive controls:
+
+| Key | Action | Description |
+| :---: | :--- | :--- |
+| **`N`** | Next Page | Load and display the next 10 students. |
+| **`P`** | Previous Page | Go back to the previous set of records. |
+| **`M`** | Main Menu | Stop viewing and return to the home screen. |
+| **`E`** | Exit | Safely close the application. |
+
+---
+
+### 🎨 Visual Feedback Logic
+The UI utility automatically formats the rows to distinguish between active and inactive students:
+> `Status == Active`   -> **[✔] Row rendered in Green** > `Status == InActive` -> **[✖] Row rendered in Red / Dimmed**
