@@ -190,4 +190,16 @@ Students per Semester
  - Semester 1 : 5
  - Semester 2 : 7
  ```
+---
 
+## 💾 DATA PERSISTENCE MODEL
+
+The system employs a multi-layered storage strategy to ensure data safety, portability, and ease of access.
+
+| File Name | Format | Purpose |
+| :--- | :--- | :--- |
+| `Students.data` | **Binary** | **Primary storage** – Saves/loads the entire `vector<clsStudent>` atomically using `write()` and `read()`. |
+| `StudentsData.txt` | **Text** | **Export/Import** with custom delimiters (`#` or `-`); fully readable by Excel. |
+| `StudentsBackup.data` | **Binary** | **Manual backup** via `BackupData()` – copies `Students.data`. Restore via `RestoreData()`[cite: 1]. |
+
+---
