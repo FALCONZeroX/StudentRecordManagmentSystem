@@ -14,11 +14,11 @@ using namespace std;
         :║▒▒▒▒║     ▓▓      ▓▓    ▓▓ ▓▓      ▓▓      ▓▓     ▓▓ ▓▓ ▓▓   ▓▓    ║▒▒▒▒║:
        :║▒▒▒▒▒║     ▓▓      ▓▓    ▓▓ ▓▓▓▓▓▓▓ ▓▓▓▓▓▓▓ ▓▓▓▓▓▓▓▓▓ ▓▓▓▓    ▓▓    ║▒▒▒▒▒║:
        :║▒▒▒▒▒║                                                              ║▒▒▒▒▒║:
-        :║▒▒▒▒║                • Student Management System •                 ║▒▒▒▒║:
+        :║▒▒▒▒║              • Student Rrcord Management System •            ║▒▒▒▒║:
          :║▒▒▒║                     -------------------                      ║▒▒▒║:
-          :║▒▒║             |using| • Functions • Struct • Vector •          ║▒▒║:
+          :║▒▒║         |using| • Functions • Struct • Vector • [OOP]        ║▒▒║:
            :║▒║                © Created BY FALAH FATHEL • 2026              ║▒║:
-           :╚╦╝              |Github|www.github.com/FALCONZeroX              ╚╦╝:
+           :╚╦╝               |Github|www.github.com/FALCONZeroX             ╚╦╝:
             :╚════════════════════════════════════════════════════════════════╝:'
             '':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::''
 */
