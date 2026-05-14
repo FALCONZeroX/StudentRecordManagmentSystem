@@ -31,3 +31,53 @@
 ---
 
 ## 🗂️ **PROJECT STRUCTURE (Header‑only)**
+Student-Management-System/
+├── main.cpp # Entry point – loads binary data & launches main menu
+├── clsStudent.h # Student entity (encapsulated data, getters/setters, row formatting)
+├── clsStudentManager.h # Business logic: vector management, CRUD, search, sort, file I/O
+├── clsStudentUI.h # User interface screens (add, show, search, update, delete, stats, etc.)
+├── clsMainScreen.h # Main menu controller & navigation loop
+├── clsInputValidate.h # Input validation (numbers, names, email, phone, GPA, dates, etc.)
+├── clsUI_Utility.h # Helper tools (headers, separators, messages, confirmation, pagination)
+├── data/
+│ └── Students.data # Auto‑generated binary database (vector serialization)
+├── .gitignore
+└── README.md
+
+
+---
+
+## 🧠 **OOP ARCHITECTURE (Layer Separation)**
+
+| Class               | Responsibility                                                                 |
+|---------------------|--------------------------------------------------------------------------------|
+| `clsStudent`        | Student entity – private char arrays (for safe binary I/O), getters/setters, `GetStudentRowString()` |
+| `clsStudentManager` | Static vector storage, CRUD logic, search, sort, statistics, binary/text file handling, backup/restore |
+| `clsStudentUI`      | Static UI screens – collects input, displays results, calls Manager functions |
+| `clsMainScreen`     | Main menu loop, dispatches to UI screens based on user choice                  |
+| `clsInputValidate`  | Static validation functions (integers, names, departments, semester, GPA, date, phone, email, active status) |
+| `clsUI_Utility`     | Static helpers – `Header()`, `Message()`, `Print_Student_Header()`, `Confirm_Message()`, `Convert_To_Lower()`, `Clear_Buffer()` |
+
+**Key OOP Principles Applied:**
+- **Encapsulation:** All member data is private, accessed via getters/setters.
+- **Separation of Concerns:** UI ↔ Logic ↔ Validation ↔ Utility are independent.
+- **Static methods & members:** No instantiation needed – global access to shared state (`_vStudents` vector).
+- **No Circular Dependencies:** Utility layer never calls other classes.
+
+---
+
+## ⚡ **FEATURES DEEP DIVE**
+
+### 🔹 **MAIN MENU** (11 core modules)
+```cpp
+[1]  Add New Student Record
+[2]  Show All Students (paginated)
+[3]  Search (by Roll / Name / Dept / cGPA)
+[4]  Update (Semester, cGPA, Phone, Email, Status)
+[5]  Delete (Logical / Actual)
+[6]  Statistics & Reports
+[7]  Arrange Records (5 sorting algorithms)
+[8]  Export to .txt / .csv
+[9]  Import from .txt / .csv
+[10] Backup & Restore (binary)
+[11] Exit
