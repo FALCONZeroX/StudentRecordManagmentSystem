@@ -101,3 +101,25 @@ Student-Management-System/
 ### ❓ Why `char[]` instead of `string`?
 
 > **The Short Answer:** Binary file writing with `reinterpret_cast<char*>(&object)` requires a **fixed‑size memory layout**. `std::string` uses dynamic memory and would corrupt data on load.
+
+## 🔹 VALIDATION & ERROR HANDLING
+
+| Field | Method / Logic | Description |
+| :--- | :--- | :--- |
+| **Numbers** | `Verify_Integers()` | Handles `cin.fail()` and prevents infinite loops on invalid input. |
+| **Names** | `Verify_Name()` | Rejects any input containing digits. |
+| **Department** | `Verify_Department()` | Strict validation: accepts only `IT`, `CS`, `ME`, `CE`. |
+| **Semester** | Range Check | Validates input strictly between **1 – 8**. |
+| **cGPA** | Range Check | Validates input strictly between **0.0 – 4.0**. |
+| **Date** | `Verify_Date()` | Validates Day (1-31), Month (1-12), and Year (1980-2026). |
+| **Phone** | Format Check | Ensures input consists of **exactly 9 numeric digits**. |
+| **Email** | Pattern Match | Basic check: must contain `@` and `.`. |
+| **Roll Numbers** | `_Get_Unique_Roll()` | **Auto-generated** logic to prevent duplicates; no manual entry. |
+| **Input Buffer** | `Clear_Buffer()` | Clears stream and ignores leftovers after failed extractions. |
+
+---
+
+### 🛡️ Robustness Features
+* **Infinite Loop Prevention:** All numerical inputs are wrapped in `while` loops that monitor the `std::cin` state.
+* **Type Safety:** Prevents character input from breaking integer-based menu selections.
+* **Atomic Validation:** Data is only passed to the `clsStudent` object after passing all validation layers.
