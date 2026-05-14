@@ -31,6 +31,7 @@
 ---
 
 ## 🗂️ **PROJECT STRUCTURE (Header‑only)**
+```text
 Student-Management-System/
 ├── main.cpp # Entry point – loads binary data & launches main menu
 ├── clsStudent.h # Student entity (encapsulated data, getters/setters, row formatting)
@@ -40,11 +41,10 @@ Student-Management-System/
 ├── clsInputValidate.h # Input validation (numbers, names, email, phone, GPA, dates, etc.)
 ├── clsUI_Utility.h # Helper tools (headers, separators, messages, confirmation, pagination)
 ├── data/
-│ └── Students.data # Auto‑generated binary database (vector serialization)
+│   └── Students.data # Auto‑generated binary database (vector serialization)
 ├── .gitignore
-└── README.md              # وثيقة شرح المشروع
-
-
+└── README.md
+```
 ---
 
 ## 🧠 **OOP ARCHITECTURE (Layer Separation)**
