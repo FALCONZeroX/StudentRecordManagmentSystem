@@ -97,3 +97,7 @@ Student-Management-System/
 | `_PhoneNumber` | `char[20]` | Exactly 9 numeric digits[cite: 1] |
 | `_Email` | `char[40]` | Must contain `@` and `.`[cite: 1] |
 | `_IsActive` | `bool` | `true` (active) / `false` (inactive)[cite: 1] |
+
+### ❓ Why `char[]` instead of `string`?
+
+> **The Short Answer:** Binary file writing with `reinterpret_cast<char*>(&object)` requires a **fixed‑size memory layout**. `std::string` uses dynamic memory and would corrupt data on load.
