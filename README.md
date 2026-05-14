@@ -162,3 +162,32 @@ The system leverages the efficiency of the C++ Standard Template Library (STL) t
 ### 💾 Auto-Persistence Feature
 > [!IMPORTANT]
 > All sorting functions automatically call the **`Save()`** method. This ensures that the new order is immediately persisted to the binary database file (`Students.data`), making the sorted view permanent[cite: 1].
+
+
+### 🔹 STATISTICS REPORT (single pass over vector)
+```
+-------------------------------------
+        Statistics And Reports
+-------------------------------------
+General Statistics
+ - Total Students    : 42
+ - Active Students   : 38
+ - Inactive Students : 4
+
+Students According to cGPA
+ - [3.5 - 4.0] Excellent   : 12
+ - [3.0 - 3.49] Very GOOD  : 15
+ - [2.5 - 2.99] GOOD       : 10
+ - [< 2.5] Accepted        : 5
+
+Students per Department
+ - CS : 18
+ - IT : 12
+ - ME : 8
+ - CE : 4
+
+Students per Semester
+ - Semester 1 : 5
+ - Semester 2 : 7
+ ```
+
