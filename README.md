@@ -286,3 +286,51 @@ Enter Name: Anderson
 | 1001     | Neo        | Anderson  | CS          | 3        | 3.75  | 15/03/2000 | 771234567   | neo@matrix.com | Active   |
 +----------+------------+-----------+-------------+----------+-------+------------+-------------+----------------+----------+
 ```
+
+## 👨‍💻 AUTHOR & CREDITS
+
+* **Created by:** Falah Fathel
+* **GitHub alias:** [FALCONZeroX](https://github.com/FALCONZeroX)
+* **Year:** 2026
+* **License:** **MIT** (free to use, modify, distribute)
+* **Acknowledgments:** Pure STL implementation – no external dependencies.
+
+## 🧪 TESTING & EDGE CASES
+
+The system has been rigorously tested against various scenarios to ensure stability and data integrity:
+
+* **✅ Empty database:** Handles empty states with graceful messages; no crashes occur when performing CRUD operations on an empty vector.
+* **✅ Duplicate roll numbers:** Strictly prevented by the internal `_Get_Unique_Roll()` auto-increment logic.
+* **✅ Invalid menu input:** Input validation loops indefinitely until a valid menu choice is entered.
+* **✅ Binary file missing:** `LoadDataFromBinary()` returns an empty vector safely and creates a new file automatically on the first save.
+* **✅ Corrupted binary file:** Designed with no undefined behavior; the system simply loads zero records if the file structure is unrecognizable.
+* **✅ Logical delete:** Correctly toggles `IsActive = false`. The student remains searchable but is clearly flagged as "InActive" in all views.
+* **✅ Import from CSV:** Specifically programmed to skip duplicate roll numbers and validate every single field before appending to the database.
+* **✅ Export with different delimiters:** Supports custom delimiters like `#` or `-` to ensure seamless compatibility with Excel and other spreadsheet software.
+
+
+## 🚀 FUTURE PLANS (Glitch-in-the-Matrix Edition)
+
+* **Arabic language support:** Implementing UTF-8 encoding for full localized support.
+* **Generic serialization:** Replacing manual `char[]` with `std::string` utilizing custom serialization techniques.
+* **Multi-user login with roles:** Implementing access control for Admin, Teacher, and Student roles.
+* **Course registration:** Linking student entities to specific course modules.
+* **Direct Excel export:** Supporting `.xlsx` format via external libraries for better reporting.
+* **Cloud backup:** Integrating Firebase or REST APIs for remote data persistence.
+* **GUI version:** Transitioning from CLI to a graphical interface using Qt or FTXUI.
+* **Dark/Neon theme toggle:** Adding aesthetic customization for the user interface.
+
+### 📜 LICENSE
+## This project is licensed under the MIT License – see the LICENSE file for details.
+```
+MIT License
+
+Copyright (c) 2026 Falah Fathel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions...
+```
