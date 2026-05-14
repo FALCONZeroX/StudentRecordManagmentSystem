@@ -203,3 +203,86 @@ The system employs a multi-layered storage strategy to ensure data safety, porta
 | `StudentsBackup.data` | **Binary** | **Manual backup** via `BackupData()` – copies `Students.data`. Restore via `RestoreData()`[cite: 1]. |
 
 ---
+### Binary I/O Implementation:
+```
+// Save entire vector
+file.write(reinterpret_cast<char*>(_vStudents.data()), _vStudents.size() * sizeof(clsStudent));
+
+// Load entire vector
+_vStudents.resize(count);
+file.read(reinterpret_cast<char*>(_vStudents.data()), count * sizeof(clsStudent));
+```
+
+## 📌 Logical vs Physical Delete
+
+* **Logical Delete:** Sets `_IsActive = false` – student remains in vector, appears in lists as "InActive".
+* **Physical Delete:** Removes student completely from `_vStudents` vector.
+
+> [!IMPORTANT]
+> Both options call **`Save()`** after operation to persist changes to the binary file.
+
+### 🎮 USAGE EXAMPLE
+## Main Menu
+```
+====================================================================
+================ STUDENTS RECORDS MANAGEMENT SYSTEM ================
+====================================================================
+[1] Add New Student Record
+[2] Show All Students
+[3] Search in Students Records
+[4] Update Student Record
+[5] Delete Student Record
+[6] Statistics & Reports
+[7] Arrange Records
+[8] Export to TXT/CSV File
+[9] Import from TXT/CSV File
+[10] Backup & Restore
+[11] Exit
+---------------------------------------------------
+Please Enter Your Choice
+>> 1
+```
+##  Adding a Student
+```
+====================================================
+================ ADD NEW Record ====================
+====================================================
+Please Enter First Name
+>> Neo
+Please Enter Last Name
+>> Anderson
+Please Enter Department (CS, IT, ME, CE)
+>> CS
+Please Enter Semester (1-8)
+>> 3
+Please Enter cGPA (0.0 - 4.0)
+>> 3.75
+Please Enter Date of Birth (DD/MM/YYYY)
+>> 15/03/2000
+Please Enter Phone Number (9 digits)
+>> 771234567
+Please Enter Email
+>> neo@matrix.com
+Is Student Active? (1=Yes / 0=No)
+>> 1
+[✔] Student Added Successfully. Roll Number: 1001
+```
+
+## Search Example
+```
+====================================================
+=================== SEARCH MENU ====================
+====================================================
+[1] By Roll Number
+[2] By Name
+[3] By Department
+[4] By cGPA
+Enter your choice >> 2
+Enter Name: Anderson
+
++----------+------------+-----------+-------------+----------+-------+------------+-------------+----------------+----------+
+| Roll No. | First Name | Last Name | Department  | Semester | cGPA  | DOB        | Phone       | Email          | Status   |
++----------+------------+-----------+-------------+----------+-------+------------+-------------+----------------+----------+
+| 1001     | Neo        | Anderson  | CS          | 3        | 3.75  | 15/03/2000 | 771234567   | neo@matrix.com | Active   |
++----------+------------+-----------+-------------+----------+-------+------------+-------------+----------------+----------+
+```
