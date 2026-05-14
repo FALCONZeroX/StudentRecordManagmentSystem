@@ -142,3 +142,23 @@ The user can navigate through the data using the following intuitive controls:
 ### 🎨 Visual Feedback Logic
 The UI utility automatically formats the rows to distinguish between active and inactive students:
 > `Status == Active`   -> **[✔] Row rendered in Green** > `Status == InActive` -> **[✖] Row rendered in Red / Dimmed**
+
+
+## 🔹 SORTING ALGORITHMS (using `std::sort` with lambdas)
+
+The system leverages the efficiency of the C++ Standard Template Library (STL) to provide high-performance sorting using lambda expressions.
+
+| Method | Order | Sort By |
+| :--- | :---: | :--- |
+| `SortByRoll_Ascending()` | ↑ | Roll number |
+| `SortByRoll_Descending()` | ↓ | Roll number |
+| `SortByName_AtoZ()` | A→Z | First name |
+| `SortByName_ZtoA()` | Z→A | First name |
+| `SortByGPA_Descending()` | ↓ | cGPA (highest first) |
+| `SortBySemester_Ascending()` | ↑ | Semester |
+
+---
+
+### 💾 Auto-Persistence Feature
+> [!IMPORTANT]
+> All sorting functions automatically call the **`Save()`** method. This ensures that the new order is immediately persisted to the binary database file (`Students.data`), making the sorted view permanent[cite: 1].
